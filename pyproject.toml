@@ -1,0 +1,19 @@
+[project]
+name = "vdvae"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "apex>=0.9.10.dev0",
+    "imageio>=2.36.1",
+    "mpi4py>=4.0.1",
+    "scikit-learn>=1.6.1",
+    "torch==2.4.0+cu118",
+    "torchvision>=0.19.0",
+]
+[tool.uv]
+find-links = [
+    "https://download.pytorch.org/whl/cu118/torch",
+    "https://download.pytorch.org/whl/cu118/torchvision",
+]
