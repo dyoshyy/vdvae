@@ -73,7 +73,7 @@ wget https://openaipublic.blob.core.windows.net/very-deep-vaes-assets/vdvae-asse
 wget https://openaipublic.blob.core.windows.net/very-deep-vaes-assets/vdvae-assets/ffhq256-iter-1700000-model.th
 wget https://openaipublic.blob.core.windows.net/very-deep-vaes-assets/vdvae-assets/ffhq256-iter-1700000-model-ema.th
 wget https://openaipublic.blob.core.windows.net/very-deep-vaes-assets/vdvae-assets/ffhq256-iter-1700000-opt.th
-python train.py --hps ffhq256 --restore_path ffhq256-iter-1700000-model.th --restore_ema_path ffhq256-iter-1700000-model-ema.th --restore_log_path ffhq256-iter-1700000-log.jsonl --restore_optimizer_path ffhq256-iter-1700000-opt.th --test_eval
+python sample.py --hps ffhq256 --restore_path checkpoints/ffhq256-iter-1700000-model.th --restore_ema_path checkpoints/ffhq256-iter-1700000-model-ema.th --restore_log_path checkpoints/ffhq256-iter-1700000-log.jsonl --restore_optimizer_path checkpoints/ffhq256-iter-1700000-opt.th --test_eval
 # should be 0.4232 nats, or 0.61 bits per dim
 ```
 

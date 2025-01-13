@@ -97,6 +97,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/42/69/34d478310d6c4451e5ddeabe879b28cc304173e0301b3568eca88ec65112/cryptacular-1.6.2.tar.gz", hash = "sha256:7b529cb2b8a3c7e5be77921bf1ebc653d4d3a8f791375cc6f971b20db2404176", size = 75764 }
 
 [[package]]
+name = "defusedxml"
+version = "0.7.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/0f/d5/c66da9b79e5bdb124974bfe172b4daf3c984ebd9c2a06e2b8a4dc7331c72/defusedxml-0.7.1.tar.gz", hash = "sha256:1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69", size = 75520 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/07/6c/aa3f2f849e01cb6a001cd8554a88d4c77c5c1a31c95bdf1cf9301e6d9ef4/defusedxml-0.7.1-py2.py3-none-any.whl", hash = "sha256:a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61", size = 25604 },
+]
+
+[[package]]
 name = "filelock"
 version = "3.16.1"
 source = { registry = "https://pypi.org/simple" }
@@ -606,10 +615,16 @@ wheels = [
 ]
 
 [[package]]
-name = "python-openid"
-version = "2.2.5"
+name = "python3-openid"
+version = "3.2.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/7b/8a/e94d18c666073280b8c0614b7e38cfaf0b129989e42f4ca713942b862f0a/python-openid-2.2.5.tar.gz", hash = "sha256:92c51c3ecec846cbec4aeff11f9ff47303d4a63f93b0e6ac0ec02a091fed70ef", size = 301619 }
+dependencies = [
+    { name = "defusedxml" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/5f/4a/29feb8da6c44f77007dcd29518fea73a3d5653ee02a587ae1f17f1f5ddb5/python3-openid-3.2.0.tar.gz", hash = "sha256:33fbf6928f401e0b790151ed2b5290b02545e8775f982485205a066f874aaeaf", size = 305600 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e0/a5/c6ba13860bdf5525f1ab01e01cc667578d6f1efc8a1dba355700fb04c29b/python3_openid-3.2.0-py3-none-any.whl", hash = "sha256:6626f771e0417486701e0b4daff762e7212e820ca5b29fcc0d05f6f8736dfa6b", size = 133681 },
+]
 
 [[package]]
 name = "repoze-sendmail"
@@ -929,6 +944,8 @@ dependencies = [
     { name = "apex" },
     { name = "imageio" },
     { name = "mpi4py" },
+    { name = "numpy", version = "1.26.4", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or sys_platform == 'darwin'" },
+    { name = "numpy", version = "2.2.1", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux')" },
     { name = "scikit-learn" },
     { name = "torch" },
     { name = "torchvision", version = "0.19.0", source = { registry = "https://pypi.org/simple" }, marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or sys_platform == 'darwin'" },
@@ -939,7 +956,8 @@ dependencies = [
 requires-dist = [
     { name = "apex", specifier = ">=0.9.10.dev0" },
     { name = "imageio", specifier = ">=2.36.1" },
-    { name = "mpi4py", specifier = ">=4.0.1" },
+    { name = "mpi4py", specifier = "==4.0.1" },
+    { name = "numpy", specifier = ">=1.26.4" },
     { name = "scikit-learn", specifier = ">=1.6.1" },
     { name = "torch", specifier = "==2.4.0+cu118" },
     { name = "torchvision", specifier = ">=0.19.0" },
@@ -952,7 +970,7 @@ source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "anykeystore" },
     { name = "pyramid" },
-    { name = "python-openid" },
+    { name = "python3-openid" },
     { name = "requests" },
     { name = "requests-oauthlib" },
 ]
