@@ -57,7 +57,7 @@ def load_vaes(H):
 
 
 def sampling(H, ema_vae):
-    decoder_output = ema_vae.forward_uncond_samples(10, t=1.0)
+    decoder_output = ema_vae.forward_uncond_samples(H.num_images_visualize, t=H.temperature)
     save_path = "generated"
     if not os.path.exists(save_path):
         os.makedirs(save_path)

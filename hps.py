@@ -144,7 +144,7 @@ def add_vae_arguments(parser):
     parser.add_argument('--adam_beta1', type=float, default=0.9)
     parser.add_argument('--adam_beta2', type=float, default=0.9)
 
-    parser.add_argument('--temperature', type=float, default=1.0)
+    parser.add_argument('--temperature', type=float, default=0.6)
 
     parser.add_argument('--iters_per_ckpt', type=int, default=25000)
     parser.add_argument('--iters_per_print', type=int, default=1000)
